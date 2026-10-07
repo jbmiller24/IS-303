@@ -1,4 +1,5 @@
 import random
+# Create function that makes sure the player choice is valid
 def get_player_choice():
     while True:
         player_choice = input("Enter Rock, Paper, Scissors: ").lower()
@@ -7,7 +8,8 @@ def get_player_choice():
             print(f"Sorry, {player_choice} is not a valid choice. Please try again.")
         else:
             return player_choice
-
+                
+# Create function that determines the winner
 def determine_winner(player_choice, computer_choice):
     if player_choice == computer_choice:
         return "tie"
@@ -24,9 +26,7 @@ def determine_winner(player_choice, computer_choice):
     elif player_choice == "scissors" and computer_choice == "rock":
         return "loss"
 
-
-
-#Welcome user to the game
+# Welcome user to the game and ask for number of rounds
 print("Welcome to Rock Paper Scissors!")
 player_wins = 0
 computer_wins = 0
@@ -36,25 +36,26 @@ while True:
     if round_count % 2 == 0:
         print("Sorry the number must be an odd number. Please try again: ")
     else:
-         break
+        break
+
+# Run the game and determine who wins each round until finished
 while rounds_played < round_count:
     player_choice = get_player_choice()
     computer_choice = random.choice(["rock", "paper", "scissors"])
     result = determine_winner(player_choice, computer_choice)
     print(f"The computer chose {computer_choice}")
     if result == "win":
-         player_wins += 1
-         rounds_played += 1
-         print("You won!")
+        player_wins += 1
+        rounds_played += 1
+        print("You won!")
     elif result == "loss":
-         rounds_played += 1
-         computer_wins += 1
-         print("You lost!")
+        rounds_played += 1
+        computer_wins += 1
+        print("You lost!")
     elif result == "tie":
-         print("You tied! Play again.")
-         
+        print("You tied! Play again.")
 
-#Game Summary
+# Game summary output
 print(f"Score - You: {player_wins} | Computer: {computer_wins}")
 if player_wins > computer_wins:
     print("You won against the computer!!")
@@ -62,5 +63,4 @@ elif player_wins < computer_wins:
     print("You lost against the computer!!")
 else:
     print("You tied with the computer!!")
-
 print("Thanks for playing!")
