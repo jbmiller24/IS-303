@@ -1,4 +1,3 @@
-
 from Level67_wordle_functions import choose_word, get_guess, evaluate_guess, display_guess, has_won
 # Welcome statement explains the rules to the game
 print("Welcome to Mystery Wordle!")
