@@ -1,21 +1,21 @@
 import pandas as pd
 
-words = ["Bread", "Butter", "Robert", "Larping"]
+#words = [["Bread", "Butter"], ["Robert", "Larping"]]
 
-result = pd.DataFrame(words)
+#result = pd.DataFrame(words)
 
-print(result)
+#print(result)
 
 student_info = {
-    "name": "Zendaya",
-    "year": "Freshman",
-    "age": 30,
-    "graduated": False,
-    "fav_class": "Accounting 310"
+    "Name": ["Tom", "LeBron", "George", "LaFawnda"],
+    "GPA": [2.7, 4.0, 1.1, 3.6]
 }
 
-print(student_info)
+result = pd.DataFrame(student_info)
 
-df = pd.DataFrame([student_info])
+print(result)
+#print(student_info)
 
-print(df)
+#df = pd.DataFrame([student_info])
+
+#print(df)
