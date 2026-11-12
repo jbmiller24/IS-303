@@ -1,16 +1,16 @@
-#numbers = [2, 1, 2, 5, 6, 5, 7]
+numbers = [2, 1, 2, 5, 6, 5, 7]
 
-#unique_list = []
+unique_list = []
 
-#for i in range(len(numbers)):
-    #for j in range(i + 1, len(numbers)):
-        #if numbers[i] != numbers[j]:
-            #unique_list.append(numbers[i])
+for i in range(len(numbers)):
 
-#print(f"The unique numbers are: {unique_list}")
+    is_unique = True
 
-import pandas as pd
+    for j in range(len(numbers)):
+        if i != j and numbers[i] == numbers[j]:
+            is_unique = False
 
-national_park_data = pd.read_csv("national_parks_sample.csv")
+    if is_unique == True:
+        unique_list.append(numbers[i])
 
-print(national_park_data)
+print(f"The unique numbers are: {unique_list}")
